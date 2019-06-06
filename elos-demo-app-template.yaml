@@ -55,6 +55,8 @@ objects:
           name: ${NAME}
         name: ${NAME}
       spec:
+        imagePullSecrets:
+        - name: registry-secret
         containers:
         - env:
           - name: DATABASE_SERVICE_NAME
@@ -67,7 +69,7 @@ objects:
             value: ${DATABASE_PASSWORD}
           - name: HELLO_MESSAGE
             value: ${HELLO_MESSAGE}
-          image: "openshiftregistrysa.azurecr.io/elos-demo/php"
+          image: "openshiftregistrysa.azurecr.io/elos-demo3/php"
           name: elos-demo-app
           ports:
           - containerPort: 8080
